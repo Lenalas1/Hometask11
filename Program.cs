@@ -1,43 +1,48 @@
-﻿// task 2
+﻿
+//task 10
 //Console.Clear();
-//Console.Write("Введите 1-ое число: ");
+//Console.Write("Введите 3х значное число ");
 //int n = Convert.ToInt32(Console.ReadLine());
-//Console.Write("Введите 2-ое число: ");
-//int m = Convert.ToInt32(Console.ReadLine());
-//if (n > m)
-//    Console.WriteLine (n);
+//int n2 = ( n % 100) / 10;
+//Console.WriteLine(n2);
+
+//task13
+//Console.Clear();
+//Console.Write("Введите число ");
+//int n = Convert.ToInt32(Console.ReadLine());
+//if (n < 100)
+//    Console.WriteLine("Нет третьей цифры ");
 //else
-//    Console.WriteLine (m);
+//{
+//    while (n >= 1000 )
+//    {
+//        n = n /10;
+//    }
+//    Console.WriteLine(n);
+//    Console.WriteLine(n % 10);
+//}
 
-// task 4
+//task15
 //Console.Clear();
-//Console.Write("Введите 1-ое число: ");
+//Console.Write("Введите число, обозначающее день недели ");
 //int n = Convert.ToInt32(Console.ReadLine());
-//Console.Write("Введите 2-ое число: ");
-//int m = Convert.ToInt32(Console.ReadLine());
-//Console.Write("Введите 3-ое число: ");
-//int s = Convert.ToInt32(Console.ReadLine()), max = n;
-//if ( max < m )
-//    max = m;
-//if ( max < s)
-//    max = s;
-//Console.WriteLine(max);
+//if (n >= 6)
+//    Console.WriteLine( "Да, это выходной");
+//if (n < 6)
+//    Console.WriteLine("Нет, это рабочий день");
 
-//task 6
-//Console.Clear();
-//Console.Write("Введите число: ");
-//int n = Convert.ToInt32(Console.ReadLine());
-//if (n/2 == 0)
-//    Console.WriteLine( "Четное число");
-//else
-//    Console.WriteLine( "Нечетное число");
-
-//task 8
+//additional tsk
 Console.Clear();
-Console.Write("Введите число: ");
-int n = Convert.ToInt32(Console.ReadLine()), count = 2;
-while (count <= n)
+int n = Convert.ToInt32(Console.ReadLine()), max1 = n, max2 = 0;
+while (n != 0)
 {
-    Console.WriteLine($"{count} ");
-    count = count + 2;   
-}
+    n = Convert.ToInt32(Console.ReadLine());
+    if (n > max1)
+    {
+        max2 = max1;
+        max1 = n;
+    }
+    else if (n > max2)
+        max2 = n;
+} 
+Console.WriteLine(max2);
