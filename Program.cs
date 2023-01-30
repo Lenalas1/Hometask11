@@ -1,48 +1,59 @@
 ﻿
-//task 10
+//task 19
 //Console.Clear();
-//Console.Write("Введите 3х значное число ");
+//Console.Write("Введите 5х значное число ");
 //int n = Convert.ToInt32(Console.ReadLine());
-//int n2 = ( n % 100) / 10;
-//Console.WriteLine(n2);
-
-//task13
-//Console.Clear();
-//Console.Write("Введите число ");
-//int n = Convert.ToInt32(Console.ReadLine());
-//if (n < 100)
-//    Console.WriteLine("Нет третьей цифры ");
+//int n1 = n / 1000;
+//int n2 = (n / 1000) % 10;
+//int n4 = (n % 100) / 10;
+//int n5 = n % 10;
+//if (n1 == n4 || n2 == n4)
+//    Console.WriteLine("да");
 //else
-//{
-//    while (n >= 1000 )
-//    {
-//        n = n /10;
-//    }
-//    Console.WriteLine(n);
-//    Console.WriteLine(n % 10);
-//}
+//    Console.WriteLine("нет");
 
-//task15
+//task 21
 //Console.Clear();
-//Console.Write("Введите число, обозначающее день недели ");
-//int n = Convert.ToInt32(Console.ReadLine());
-//if (n >= 6)
-//    Console.WriteLine( "Да, это выходной");
-//if (n < 6)
-//    Console.WriteLine("Нет, это рабочий день");
+//Console.Write("Введите координату X: ");
+//double x1 = Convert.ToDouble(Console.ReadLine());
+//Console.Write("Введите координату Y: ");
+//double y1 = Convert.ToDouble(Console.ReadLine());
+//Console.Write("Введите координату Z: ");
+//double z1 = Convert.ToDouble(Console.ReadLine());
+//Console.Write("Введите координату X: ");
+//double x2 = Convert.ToDouble(Console.ReadLine());
+//Console.Write("Введите координату Y: ");
+//double y2 = Convert.ToDouble(Console.ReadLine());
+//Console.Write("Введите координату Z: ");
+//double z2 = Convert.ToDouble(Console.ReadLine());
+//double S = Math.Sqrt(Math.Pow(x1 - x2, 2) + Math.Pow(y1 - y2, 2)+Math.Pow(z1 - z2, 2));
+//Console.WriteLine($"Результат: {Math.Round(S, 2)}");
 
-//additional tsk
-Console.Clear();
-int n = Convert.ToInt32(Console.ReadLine()), max1 = n, max2 = 0;
-while (n != 0)
-{
-    n = Convert.ToInt32(Console.ReadLine());
-    if (n > max1)
-    {
-        max2 = max1;
-        max1 = n;
-    }
-    else if (n > max2)
-        max2 = n;
+//task 23
+//Console.Clear();
+//Console.Write("ВВедите число: ");
+//int n = Convert.ToInt32(Console.ReadLine());
+//for (int i = 1; i < n; i++)
+//    Console.Write($"{Math.Pow(i, 3)} ");
+
+//additional task
+int n = Convert.ToInt32(Console.ReadLine());
+int[] array = new int[n];
+for (int i = 0; i < n; i++)
+    array[i] = Convert.ToInt32(Console.ReadLine());
+
+int maxSumma = 0;
+for (int i = 1; i < array.Length - 1; i++)
+{ 
+    int sum = array[i - 1]+ array[i] + array[ i + 1];
+    if (sum > maxSumma)
+        maxSumma = sum;
 } 
-Console.WriteLine(max2);
+if (array[0] + array[1] + array[array.Length - 1] > maxSumma)
+    maxSumma = array[0] + array[1] + array[array.Length - 1];
+
+if (array[array.Length -1] + array[array.Length - 2 ] + array[0] > maxSumma)
+    maxSumma = array[array.Length -1] + array[array.Length - 2] + array[0];
+
+Console.WriteLine(maxSumma);   
+
