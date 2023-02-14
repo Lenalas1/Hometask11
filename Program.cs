@@ -1,59 +1,78 @@
-﻿
-//task 19
+﻿//task 34
+//void InputArray(int[] array)
+//{
+//    for (int i = 0; i < array.Length; i++)
+//        array[i] = new Random().Next(100,1000);
+//}
+
+
+//int CountEvenArray (int[] array)
+//{
+//    int count = 0;
+//foreach(int element in array)
+//{
+//    if (element % 2 == 0)
+//        count++;
+//}
+//return count;
+//}
+
+
 //Console.Clear();
-//Console.Write("Введите 5х значное число ");
+//Console.Write("Введите кол-во элементов массива: ");
 //int n = Convert.ToInt32(Console.ReadLine());
-//int n1 = n / 1000;
-//int n2 = (n / 1000) % 10;
-//int n4 = (n % 100) / 10;
-//int n5 = n % 10;
-//if (n1 == n4 || n2 == n4)
-//    Console.WriteLine("да");
-//else
-//    Console.WriteLine("нет");
+//int[] array = new int[n];
+//InputArray(array);
+//Console.WriteLine($"Начальный массив: [{string.Join(", ", array)}]");
+//Console.WriteLine($"Результат: {CountEvenArray(array)}");
 
-//task 21
-//Console.Clear();
-//Console.Write("Введите координату X: ");
-//double x1 = Convert.ToDouble(Console.ReadLine());
-//Console.Write("Введите координату Y: ");
-//double y1 = Convert.ToDouble(Console.ReadLine());
-//Console.Write("Введите координату Z: ");
-//double z1 = Convert.ToDouble(Console.ReadLine());
-//Console.Write("Введите координату X: ");
-//double x2 = Convert.ToDouble(Console.ReadLine());
-//Console.Write("Введите координату Y: ");
-//double y2 = Convert.ToDouble(Console.ReadLine());
-//Console.Write("Введите координату Z: ");
-//double z2 = Convert.ToDouble(Console.ReadLine());
-//double S = Math.Sqrt(Math.Pow(x1 - x2, 2) + Math.Pow(y1 - y2, 2)+Math.Pow(z1 - z2, 2));
-//Console.WriteLine($"Результат: {Math.Round(S, 2)}");
+//task 36
+//void InputArray(int[] array)
+//{
+//    for (int i = 0; i < array.Length; i++)
+//        array[i] = new Random().Next(1,100);
+//}
 
-//task 23
+//int SummaOddInArray(int[] array)
+//{
+//    int summa = 0;
+//    for (int i = 1; i< array.Length; i +=2)
+//        summa = summa + array[i];
+//    return summa;
+//}
+
 //Console.Clear();
-//Console.Write("ВВедите число: ");
+//Console.Write("Введите кол-во элементов массива: ");
 //int n = Convert.ToInt32(Console.ReadLine());
-//for (int i = 1; i < n; i++)
-//    Console.Write($"{Math.Pow(i, 3)} ");
+//int[] array = new int[n];
+//InputArray(array);
+//Console.WriteLine($"Начальный массив: [{string.Join(", ", array)}]");
+//Console.WriteLine($"Результат: {SummaOddInArray(array)}");
 
-//additional task
+//task 38
+void InputArray(double[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+        array[i] = Math.Round(new Random().NextDouble() * (10-1) + 1, 2);
+}
+
+double DiffMaxAndMin(double[] array)
+{
+    double minArray = array[0], maxArray = array[0];
+    foreach (int element in array)
+    {
+        if (element > maxArray)
+          maxArray = element;
+        if (element < minArray)
+          minArray = element;
+    }
+    return maxArray - minArray;   
+}
+
+Console.Clear();
+Console.Write("Введите кол-во элементов массива: ");
 int n = Convert.ToInt32(Console.ReadLine());
-int[] array = new int[n];
-for (int i = 0; i < n; i++)
-    array[i] = Convert.ToInt32(Console.ReadLine());
-
-int maxSumma = 0;
-for (int i = 1; i < array.Length - 1; i++)
-{ 
-    int sum = array[i - 1]+ array[i] + array[ i + 1];
-    if (sum > maxSumma)
-        maxSumma = sum;
-} 
-if (array[0] + array[1] + array[array.Length - 1] > maxSumma)
-    maxSumma = array[0] + array[1] + array[array.Length - 1];
-
-if (array[array.Length -1] + array[array.Length - 2 ] + array[0] > maxSumma)
-    maxSumma = array[array.Length -1] + array[array.Length - 2] + array[0];
-
-Console.WriteLine(maxSumma);   
-
+double[] array = new double[n];
+InputArray(array);
+Console.WriteLine($"Начальный массив: [{string.Join(", ", array)}]");
+Console.WriteLine($"Результат: {DiffMaxAndMin(array)}");
